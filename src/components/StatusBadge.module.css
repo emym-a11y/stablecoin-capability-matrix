@@ -1,0 +1,35 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+}
+
+.live {
+  background: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+
+.comingSoon {
+  background: var(--color-grey-bg);
+  color: var(--color-grey-text);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.live .dot {
+  background: var(--color-green-dot);
+}
+
+.comingSoon .dot {
+  background: var(--color-grey-dot);
+}

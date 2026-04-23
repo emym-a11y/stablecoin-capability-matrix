@@ -1,0 +1,32 @@
+name: Fetch Country Data
+
+on:
+  schedule:
+    - cron: '23 8 * * 1'  # Monday 8:23 UTC
+  workflow_dispatch: {}
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - name: Fetch and parse country data
+        run: npx tsx scripts/fetch-country-data.ts
+        env:
+          SOURCEGRAPH_TOKEN: ${{ secrets.SOURCEGRAPH_TOKEN }}
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet src/data/countries.json && echo "No changes" && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/countries.json
+          git commit -m "chore: update country data from pay-server"
+          git push

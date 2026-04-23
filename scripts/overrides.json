@@ -1,0 +1,12 @@
+{
+  "local_acquiring": {
+    "countries": ["AU","AT","BE","BG","BR","CA","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GH","GI","GR","HK","HR","HU","ID","IE","IN","IT","JP","LI","LT","LU","LV","MT","MX","MY","NL","NO","NZ","PL","PT","RO","SE","SG","SI","SK","TH","US"],
+    "source": "override",
+    "note": "From supported_acquiring_and_payouts_countries_excluding_gated -- dynamic method, update manually"
+  },
+  "global_payouts": {
+    "countries": ["AE","AG","AL","AM","AR","AT","AU","BA","BD","BE","BG","BH","BJ","BN","BO","BS","BW","CA","CH","CI","CL","CO","CR","CY","CZ","DE","DK","DO","EC","EE","EG","ES","ET","FI","FR","GB","GH","GM","GR","GT","GY","HK","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KH","KR","KW","LC","LI","LK","LT","LU","LV","MA","MC","MD","MG","MK","MN","MO","MT","MU","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PH","PK","PL","PT","PY","QA","RO","RS","RW","SA","SE","SG","SI","SK","SN","SV","TH","TN","TR","TT","TW","TZ","UY","UZ","VN","ZA"],
+    "source": "override",
+    "note": "From supported_payouts_countries -- dynamic method, update manually"
+  }
+}
