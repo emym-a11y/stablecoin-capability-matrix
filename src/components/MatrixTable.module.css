@@ -100,12 +100,69 @@
   width: 120px;
 }
 
-.sourceCell {
-  width: 80px;
-  text-align: center;
+.arrow {
+  margin-left: 4px;
+  font-size: 10px;
+  transition: transform var(--transition-fast);
+  display: inline-block;
 }
 
-.sourceIcon {
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+.expandedRow td {
+  border-bottom: none;
+}
+
+.detailRow td {
+  padding: 0 var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.detailPanel {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.regionSection {
+  margin-bottom: var(--space-3);
+}
+
+.regionSection:last-child {
+  margin-bottom: 0;
+}
+
+.regionLabel {
   font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-2);
+}
+
+.countryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.countryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.countryCode {
+  color: var(--color-text-faint);
+  font-size: 10px;
 }
