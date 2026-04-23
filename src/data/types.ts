@@ -8,6 +8,7 @@ export interface ProductMeta {
   groupLabel: string;
   description: string;
   rubySource: string;
+  comingSoon: number;
 }
 
 export interface ProductCountryData {

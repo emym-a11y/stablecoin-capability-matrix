@@ -30,7 +30,8 @@ export default function MatrixTable({ data }: MatrixTableProps) {
       <thead>
         <tr>
           <th>Product</th>
-          <th className={styles.countCell}>Countries</th>
+          <th className={styles.countCell}>Live</th>
+          <th className={styles.countCell}>Coming Soon</th>
           <th className={styles.statusCell}>Status</th>
         </tr>
       </thead>
@@ -38,7 +39,7 @@ export default function MatrixTable({ data }: MatrixTableProps) {
         {grouped.map((group) => (
           <>
             <tr key={group.key} className={styles.groupRow}>
-              <td colSpan={3}>{group.label}</td>
+              <td colSpan={4}>{group.label}</td>
             </tr>
             {group.products.map((product) => {
               const productData = data.products[product.id];
@@ -66,13 +67,22 @@ export default function MatrixTable({ data }: MatrixTableProps) {
                         )}
                       </button>
                     </td>
+                    <td className={styles.countCell}>
+                      {product.comingSoon > 0 ? (
+                        <span className={`${styles.countBadge} ${styles.comingSoonBadge}`}>
+                          {product.comingSoon}
+                        </span>
+                      ) : (
+                        <span className={styles.countBadge} style={{ opacity: 0.4 }}>--</span>
+                      )}
+                    </td>
                     <td className={styles.statusCell}>
                       <StatusBadge isLive={count > 0} />
                     </td>
                   </tr>
                   {isExpanded && productData && (
                     <tr key={`${product.id}-detail`} className={styles.detailRow}>
-                      <td colSpan={3}>
+                      <td colSpan={4}>
                         <div className={styles.detailPanel}>
                           {(Object.entries(groupByRegion(productData.countries)) as [string, string[]][]).map(
                             ([region, countries]) =>
