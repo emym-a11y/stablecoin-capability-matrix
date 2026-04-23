@@ -16,15 +16,11 @@ function formatRelativeTime(isoDate: string): string {
 
 export default function Header({ data }: HeaderProps) {
   const liveProducts = PRODUCTS.filter(
-    (p) => (data.products[p.id]?.count ?? 0) > 0
+    (p) => (data.products[p.id]?.live.length ?? 0) > 0
   ).length;
 
-  const allCountries = new Set(
-    Object.values(data.products).flatMap((p) => p.countries)
-  );
-
-  const maxCoverage = Math.max(
-    ...Object.values(data.products).map((p) => p.count)
+  const allLiveCountries = new Set(
+    Object.values(data.products).flatMap((p) => p.live)
   );
 
   return (
@@ -32,7 +28,7 @@ export default function Header({ data }: HeaderProps) {
       <div className={styles.left}>
         <h1 className={styles.title}>Stablecoin Capability Matrix</h1>
         <div className={styles.subtitle}>
-          {formatRelativeTime(data.fetchedAt)} from pay-server
+          {formatRelativeTime(data.fetchedAt)}
         </div>
       </div>
       <div className={styles.stats}>
@@ -41,12 +37,8 @@ export default function Header({ data }: HeaderProps) {
           <div className={styles.statLabel}>Products live</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>{allCountries.size}</div>
-          <div className={styles.statLabel}>Unique countries</div>
-        </div>
-        <div className={styles.stat}>
-          <div className={styles.statValue}>{maxCoverage}</div>
-          <div className={styles.statLabel}>Max coverage</div>
+          <div className={styles.statValue}>{allLiveCountries.size}</div>
+          <div className={styles.statLabel}>Countries with live products</div>
         </div>
       </div>
     </div>

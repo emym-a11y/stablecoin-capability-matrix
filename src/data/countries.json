@@ -1,56 +1,65 @@
 {
-  "fetchedAt": "2026-04-22T23:00:00Z",
-  "commitSha": "seeded-from-sourcegraph-exploration",
+  "fetchedAt": "2026-04-23T00:00:00Z",
   "products": {
     "local_acquiring": {
-      "countries": ["AU","AT","BE","BG","BR","CA","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GH","GI","GR","HK","HR","HU","ID","IE","IN","IT","JP","LI","LT","LU","LV","MT","MX","MY","NL","NO","NZ","PL","PT","RO","SE","SG","SI","SK","TH","US"],
-      "source": "override",
-      "count": 46
+      "live": ["AU","AT","BE","BG","BR","CA","CH","CY","CZ","DE","DK","EE","ES","FI","FR","GB","GH","GI","GR","HK","HR","HU","ID","IE","IN","IT","JP","LI","LT","LU","LV","MT","MX","MY","NL","NO","NZ","PL","PT","RO","SE","SG","SI","SK","TH","US"],
+      "coming_soon_2026": ["KE"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "stablecoin_payments": {
-      "countries": ["US","GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI","HK","MX"],
-      "source": "auto",
-      "count": 34
+      "live": ["US"],
+      "coming_soon_2026": ["GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "onramp_support": {
-      "countries": ["US","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","GB"],
-      "source": "auto",
-      "count": 28
+      "live": [],
+      "coming_soon_2026": ["US","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","GB"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "stablecoin_link_balance": {
-      "countries": ["US","GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI","HK","MX"],
-      "source": "auto",
-      "count": 34
+      "live": [],
+      "coming_soon_2026": ["US","GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI","HK","MX"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "sfa_storage": {
-      "countries": ["AG","AI","AM","AO","AR","AZ","BA","BD","BH","BJ","BN","BO","BR","BW","CL","CM","CO","CR","CV","DJ","DM","DO","EC","FJ","FM","GA","GD","GE","GM","GN","GQ","GY","HN","JO","KG","KI","KM","KN","KZ","LC","LK","LR","LS","MG","MH","MN","MR","MS","MU","MV","MW","MX","OM","PA","PE","PG","PK","PW","PY","QA","SA","SB","SC","SL","SN","SR","SV","TJ","TL","TN","TO","TR","TV","TZ","UG","US","UY","UZ","VC","VG","VN","VU","WS","ZM"],
-      "source": "auto",
-      "count": 84
+      "live": ["AD","AO","AI","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BE","BZ","BJ","BM","BT","BO","BA","BW","VG","BN","CM","CA","CV","KY","CL","CO","KM","CK","CR","HR","CY","DJ","DM","DO","EC","EG","SV","GQ","EE","SZ","FJ","FI","FR","GA","GM","DE","GR","GT","GG","GN","GY","HN","HK","IN","ID","IE","IM","IT","JM","JP","JE","JO","KZ","KI","KG","LV","LS","LR","LT","LU","MG","MW","MY","MV","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MS","NA","NR","NL","NO","OM","PW","PA","PG","PY","PE","PH","PL","QA","RO","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","KN","LC","VC","SR","SE","CH","TW","TJ","TZ","TL","TG","TO","TT","TR","TM","TC","TV","UG","AE","GB","US","UZ","VU","VA","VN","ZM"],
+      "coming_soon_2026": ["CI","GH","KE","MZ","NG","RW","BR"],
+      "year_2027_plus": [],
+      "not_supportable": ["AF","AL","DZ","BY","BG","BF","BI","KH","CF","TD","CN","CU","CZ","CD","DK","TL","ER","ET","GE","GI","GD","GW","HT","HU","IS","IR","IQ","IL","XK","KW","LA","LB","LY","LI","MK","ML","MA","MM","NP","NZ","NI","NE","KP","PK","PT","CG","RU","SO","KR","SS","SD","SZ","SY","TH","TN","UA","UY","VE","YE","ZW","BB","AW","FO","GL","MQ","GP","RE","YT","GF","PM","WF","NC","PF","BL","MF","SX","CW","BQ","AG","KN","MS","TC","VG","AI","DM","LC","VC","GD","BB","TT"]
     },
     "global_payouts": {
-      "countries": ["AE","AG","AL","AM","AR","AT","AU","BA","BD","BE","BG","BH","BJ","BN","BO","BS","BW","CA","CH","CI","CL","CO","CR","CY","CZ","DE","DK","DO","EC","EE","EG","ES","ET","FI","FR","GB","GH","GM","GR","GT","GY","HK","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KH","KR","KW","LC","LI","LK","LT","LU","LV","MA","MC","MD","MG","MK","MN","MO","MT","MU","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PH","PK","PL","PT","PY","QA","RO","RS","RW","SA","SE","SG","SI","SK","SN","SV","TH","TN","TR","TT","TW","TZ","UY","UZ","VN","ZA"],
-      "source": "override",
-      "count": 108
+      "live": ["AE","AG","AL","AM","AR","AT","AU","BA","BD","BE","BG","BH","BJ","BN","BO","BS","BW","CA","CH","CI","CL","CO","CR","CY","CZ","DE","DK","DO","EC","EE","EG","ES","ET","FI","FR","GB","GH","GM","GR","GT","GY","HK","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KH","KR","KW","LC","LI","LK","LT","LU","LV","MA","MC","MD","MG","MK","MN","MO","MT","MU","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PH","PK","PL","PT","PY","QA","RO","RS","RW","SA","SE","SG","SI","SK","SN","SV","TH","TN","TR","TT","TW","TZ","UY","UZ","VN","ZA"],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "local_currency_offramps": {
-      "countries": ["US","MX","NG","AR","CO","PE","PH","AT","BE","CY","DE","EE","ES","FI","FR","GR","HR","IE","IT","LT","LU","LV","MT","NL","PT","SI","SK"],
-      "source": "auto",
-      "count": 27
+      "live": [],
+      "coming_soon_2026": ["US","MX","NG","AR","CO","PE","PH","AT","BE","CY","DE","EE","ES","FI","FR","GR","HR","IE","IT","LT","LU","LV","MT","NL","PT","SI","SK"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "legacy_connect_crypto": {
-      "countries": ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BA","BD","BE","BG","BH","BJ","BN","BO","BR","BS","BW","CA","CH","CI","CL","CM","CO","CR","CV","CY","CZ","DE","DJ","DK","DM","DO","EC","EE","EG","ES","ET","FI","FJ","FM","FR","GA","GB","GD","GE","GH","GM","GN","GQ","GR","GT","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KZ","LC","LI","LK","LR","LS","LT","LU","LV","MA","MC","MD","MG","MH","MK","MN","MO","MR","MS","MT","MU","MV","MW","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RS","RW","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","SV","TH","TJ","TL","TN","TO","TR","TT","TV","TW","TZ","UG","US","UY","UZ","VC","VG","VN","VU","WS","ZA","ZM"],
-      "source": "auto",
-      "count": 148
+      "live": ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BA","BD","BE","BG","BH","BJ","BN","BO","BR","BS","BW","CA","CH","CI","CL","CM","CO","CR","CV","CY","CZ","DE","DJ","DK","DM","DO","EC","EE","EG","ES","ET","FI","FJ","FM","FR","GA","GB","GD","GE","GH","GM","GN","GQ","GR","GT","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KZ","LC","LI","LK","LR","LS","LT","LU","LV","MA","MC","MD","MG","MH","MK","MN","MO","MR","MS","MT","MU","MV","MW","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RS","RW","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","SV","TH","TJ","TL","TN","TO","TR","TT","TV","TW","TZ","UG","US","UY","UZ","VC","VG","VN","VU","WS","ZA","ZM"],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "distributed_payouts": {
-      "countries": ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BA","BD","BE","BG","BH","BJ","BN","BO","BR","BS","BW","CA","CH","CI","CL","CM","CO","CR","CV","CY","CZ","DE","DJ","DK","DM","DO","EC","EE","EG","ES","ET","FI","FJ","FM","FR","GA","GB","GD","GE","GH","GM","GN","GQ","GR","GT","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KZ","LC","LI","LK","LR","LS","LT","LU","LV","MA","MC","MD","MG","MH","MK","MN","MO","MR","MS","MT","MU","MV","MW","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RS","RW","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","SV","TH","TJ","TL","TN","TO","TR","TT","TV","TW","TZ","UG","US","UY","UZ","VC","VG","VN","VU","WS","ZA","ZM"],
-      "source": "auto",
-      "count": 148
+      "live": ["US"],
+      "coming_soon_2026": ["AE","AG","AI","AL","AM","AO","AR","AT","AU","AZ","BA","BD","BE","BG","BH","BJ","BN","BO","BR","BS","BW","CA","CH","CI","CL","CM","CO","CR","CV","CY","CZ","DE","DJ","DK","DM","DO","EC","EE","EG","ES","ET","FI","FJ","FM","FR","GA","GB","GD","GE","GH","GM","GN","GQ","GR","GT","GY","HK","HN","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KZ","LC","LI","LK","LR","LS","LT","LU","LV","MA","MC","MD","MG","MH","MK","MN","MO","MR","MS","MT","MU","MV","MW","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PG","PH","PK","PL","PT","PW","PY","QA","RO","RS","RW","SA","SB","SC","SE","SG","SI","SK","SL","SN","SR","SV","TH","TJ","TL","TN","TO","TR","TT","TV","TW","TZ","UG","UY","UZ","VC","VG","VN","VU","WS","ZA","ZM"],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "stablecoin_issuing": {
-      "countries": ["AU","BO","HK","HN","MY","PH","PY","SG","SV","UY","AR","BR","CO","CR","DO","EC","GT","MX","PA","PE","BM","KY","VG","BF","BJ","CM","CV","CI","DJ","ET","GA","GH","GM","GN","GQ","KE","KM","LS","MG","MU","MW","RW","SC","SN","SL","TZ","UG","ZM","BD","BN","KH","FJ","KG","MN","PK","LK","TJ","UZ","VN","BH","JO","KW","OM","QA"],
-      "source": "auto",
-      "count": 63
+      "live": ["AU","BO","HK","HN","MY","PH","PY","SG","SV","UY","AR","BR","CO","CR","DO","EC","GT","MX","PA","PE"],
+      "coming_soon_2026": ["BM","KY","VG","BF","BJ","CM","CV","CI","DJ","ET","GA","GH","GM","GN","GQ","KE","KM","LS","MG","MU","MW","RW","SC","SN","SL","TZ","UG","ZM","BD","BN","KH","FJ","KG","MN","PK","LK","TJ","UZ","VN","BH","JO","KW","OM","QA"],
+      "year_2027_plus": [],
+      "not_supportable": []
     }
   }
 }

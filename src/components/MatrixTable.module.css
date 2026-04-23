@@ -33,94 +33,77 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.productRow {
+  transition: background var(--transition-fast);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: var(--color-surface-hover);
+}
+
 .productName {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .productDesc {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   margin-top: 2px;
-}
-
-.countCell {
-  text-align: center;
-  width: 100px;
-}
-
-.countBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 36px;
-  padding: var(--space-1) var(--space-2);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  border: none;
-  background: none;
-}
-
-.countBadge:hover {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-md);
-}
-
-.high {
-  background: var(--color-green-bg);
-  color: var(--color-green-text);
-}
-
-.medium {
-  background: var(--color-yellow-bg);
-  color: var(--color-yellow-text);
-}
-
-.low {
-  background: var(--color-red-bg);
-  color: var(--color-red-text);
-}
-
-.none {
-  background: var(--color-grey-bg);
-  color: var(--color-grey-text);
-  cursor: default;
-}
-
-.none:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.statusCell {
-  width: 120px;
-}
-
-.comingSoonBadge {
-  background: var(--color-grey-bg);
-  color: var(--color-grey-text);
-  cursor: default;
-}
-
-.comingSoonBadge:hover {
-  transform: none;
-  box-shadow: none;
+  padding-left: 22px;
 }
 
 .arrow {
-  margin-left: 6px;
   font-size: 14px;
   transition: transform var(--transition-fast);
   display: inline-block;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
 }
 
 .arrowUp {
   transform: rotate(180deg);
 }
+
+.countCell {
+  text-align: center;
+  width: 90px;
+}
+
+.countNum {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.countLive {
+  color: var(--color-green-text);
+}
+
+.countComingSoon {
+  color: var(--color-yellow-text);
+}
+
+.count2027 {
+  color: var(--color-accent);
+}
+
+.countNotSupported {
+  color: var(--color-text-muted);
+}
+
+.countZero {
+  color: var(--color-text-faint);
+}
+
+/* Expanded detail row */
 
 .expandedRow td {
   border-bottom: none;
@@ -135,45 +118,67 @@
   background: var(--color-surface-raised);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-md);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  max-height: 400px;
+  overflow-y: auto;
 }
 
-.regionSection {
-  margin-bottom: var(--space-3);
-}
-
-.regionSection:last-child {
-  margin-bottom: 0;
-}
-
-.regionLabel {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-2);
-}
-
-.countryGrid {
+.countryList {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
+  flex-direction: column;
 }
 
-.countryTag {
-  display: inline-flex;
+.countryRow {
+  display: flex;
   align-items: center;
-  gap: 3px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 2px var(--space-2);
-  font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
+  justify-content: space-between;
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.countryRow:last-child {
+  border-bottom: none;
+}
+
+.countryName {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
 }
 
 .countryCode {
   color: var(--color-text-faint);
-  font-size: 10px;
+  font-size: var(--font-size-xs);
+  margin-left: var(--space-2);
+}
+
+/* Status badges in dropdown */
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.badgeLive {
+  background: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+
+.badgeComingSoon {
+  background: var(--color-yellow-bg);
+  color: var(--color-yellow-text);
+}
+
+.badge2027 {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.badgeNotSupported {
+  background: var(--color-grey-bg);
+  color: var(--color-grey-text);
 }

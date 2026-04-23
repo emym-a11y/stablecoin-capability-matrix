@@ -1,5 +1,13 @@
 export type ProductGroup = 'money_in' | 'balances' | 'money_out';
-export type DataSource = 'auto' | 'override';
+
+export type CountryStatus = 'live' | 'coming_soon_2026' | 'year_2027_plus' | 'not_supportable';
+
+export const STATUS_LABELS: Record<CountryStatus, string> = {
+  live: 'Live',
+  coming_soon_2026: 'Coming Soon (2026)',
+  year_2027_plus: '2027+',
+  not_supportable: 'Not Supportable',
+};
 
 export interface ProductMeta {
   id: string;
@@ -7,20 +15,27 @@ export interface ProductMeta {
   group: ProductGroup;
   groupLabel: string;
   description: string;
-  rubySource: string;
-  comingSoon: number;
 }
 
 export interface ProductCountryData {
-  countries: string[];
-  source: DataSource;
-  count: number;
+  live: string[];
+  coming_soon_2026: string[];
+  year_2027_plus: string[];
+  not_supportable: string[];
 }
 
 export interface CountryDataFile {
   fetchedAt: string;
-  commitSha: string;
   products: Record<string, ProductCountryData>;
+}
+
+export function getStatusCounts(data: ProductCountryData) {
+  return {
+    live: data.live.length,
+    coming_soon_2026: data.coming_soon_2026.length,
+    year_2027_plus: data.year_2027_plus.length,
+    not_supportable: data.not_supportable.length,
+  };
 }
 
 export type CoverageTier = 'high' | 'medium' | 'low' | 'none';
