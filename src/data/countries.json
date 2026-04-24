@@ -7,6 +7,12 @@
       "year_2027_plus": [],
       "not_supportable": []
     },
+    "remote_acquiring": {
+      "live": [],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
+    },
     "stablecoin_payments": {
       "live": ["US"],
       "coming_soon_2026": ["GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI"],
@@ -19,17 +25,29 @@
       "year_2027_plus": [],
       "not_supportable": []
     },
+    "local_currency_onramp": {
+      "live": [],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
+    },
     "stablecoin_link_balance": {
       "live": [],
       "coming_soon_2026": ["US","GB","AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SI","ES","SE","CH","NO","LI","GI","HK","MX"],
       "year_2027_plus": [],
       "not_supportable": []
     },
-    "sfa_storage": {
+    "sfa_custodial": {
       "live": ["AD","AO","AI","AG","AR","AM","AU","AT","AZ","BS","BH","BD","BE","BZ","BJ","BM","BT","BO","BA","BW","VG","BN","CM","CA","CV","KY","CL","CO","KM","CK","CR","HR","CY","DJ","DM","DO","EC","EG","SV","GQ","EE","SZ","FJ","FI","FR","GA","GM","DE","GR","GT","GG","GN","GY","HN","HK","IN","ID","IE","IM","IT","JM","JP","JE","JO","KZ","KI","KG","LV","LS","LR","LT","LU","MG","MW","MY","MV","MT","MH","MR","MU","MX","FM","MD","MC","MN","ME","MS","NA","NR","NL","NO","OM","PW","PA","PG","PY","PE","PH","PL","QA","RO","WS","SM","ST","SA","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","KN","LC","VC","SR","SE","CH","TW","TJ","TZ","TL","TG","TO","TT","TR","TM","TC","TV","UG","AE","GB","US","UZ","VU","VA","VN","ZM"],
       "coming_soon_2026": ["CI","GH","KE","MZ","NG","RW","BR"],
       "year_2027_plus": [],
-      "not_supportable": ["AF","AL","DZ","BY","BG","BF","BI","KH","CF","TD","CN","CU","CZ","CD","DK","TL","ER","ET","GE","GI","GD","GW","HT","HU","IS","IR","IQ","IL","XK","KW","LA","LB","LY","LI","MK","ML","MA","MM","NP","NZ","NI","NE","KP","PK","PT","CG","RU","SO","KR","SS","SD","SZ","SY","TH","TN","UA","UY","VE","YE","ZW","BB","AW","FO","GL","MQ","GP","RE","YT","GF","PM","WF","NC","PF","BL","MF","SX","CW","BQ","AG","KN","MS","TC","VG","AI","DM","LC","VC","GD","BB","TT"]
+      "not_supportable": ["AF","AL","DZ","BY","BF","BI","KH","CF","TD","CN","CU","CD","ER","ET","GE","GW","HT","IR","IQ","IL","XK","LA","LB","LY","MK","ML","MA","MM","NP","NI","NE","KP","CG","RU","SO","KR","SS","SD","SY","UA","VE","YE","ZW"]
+    },
+    "sfa_non_custodial": {
+      "live": ["BB","BZ","BT","CK","SZ","GG","IM","JE","KI","MH","FM","MC","MS","NR","PW","PG","SM","ST","SB","KN","LC","VC","TC","TM","TV","VU","VA","WS","NA","MR","MV","LS","LR","MG","MW","TG","TO","TT","SR"],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
     },
     "global_payouts": {
       "live": ["AE","AG","AL","AM","AR","AT","AU","BA","BD","BE","BG","BH","BJ","BN","BO","BS","BW","CA","CH","CI","CL","CO","CR","CY","CZ","DE","DK","DO","EC","EE","EG","ES","ET","FI","FR","GB","GH","GM","GR","GT","GY","HK","HR","HU","ID","IE","IL","IN","IS","IT","JM","JO","JP","KE","KH","KR","KW","LC","LI","LK","LT","LU","LV","MA","MC","MD","MG","MK","MN","MO","MT","MU","MX","MY","NA","NG","NL","NO","NZ","OM","PA","PE","PH","PK","PL","PT","PY","QA","RO","RS","RW","SA","SE","SG","SI","SK","SN","SV","TH","TN","TR","TT","TW","TZ","UY","UZ","VN","ZA"],

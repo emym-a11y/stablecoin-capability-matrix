@@ -10,6 +10,13 @@ export const PRODUCTS: ProductMeta[] = [
     description: 'Countries where Stripe has merchants today',
   },
   {
+    id: 'remote_acquiring',
+    name: 'Remote Acquiring (Payments)',
+    group: 'money_in',
+    groupLabel: 'Money In',
+    description: 'Accept payments from customers in other countries',
+  },
+  {
     id: 'stablecoin_payments',
     name: 'Stablecoin Payments',
     group: 'money_in',
@@ -23,21 +30,35 @@ export const PRODUCTS: ProductMeta[] = [
     groupLabel: 'Money In',
     description: 'Convert fiat to crypto for account top-ups',
   },
+  {
+    id: 'local_currency_onramp',
+    name: 'Local Currency On-Ramp',
+    group: 'money_in',
+    groupLabel: 'Money In',
+    description: 'Convert local fiat currency to stablecoins',
+  },
 
-  // Balances
+  // Balances/Storage
   {
     id: 'stablecoin_link_balance',
     name: 'Stablecoin Link Balance',
     group: 'balances',
-    groupLabel: 'Balances',
+    groupLabel: 'Balances/Storage',
     description: 'Hold stablecoin balances via Link',
   },
   {
-    id: 'sfa_storage',
-    name: 'SFA Support for Storage',
+    id: 'sfa_custodial',
+    name: 'Stablecoin Financial Accounts (custodial wallets)',
     group: 'balances',
-    groupLabel: 'Balances',
-    description: 'Stablecoin Financial Account for USDC storage',
+    groupLabel: 'Balances/Storage',
+    description: 'Stripe-hosted custodial wallets for USDC storage',
+  },
+  {
+    id: 'sfa_non_custodial',
+    name: 'Stablecoin Financial Accounts (non-custodial wallets)',
+    group: 'balances',
+    groupLabel: 'Balances/Storage',
+    description: 'Self-hosted non-custodial wallets requiring NCW setup',
   },
 
   // Money Out
@@ -69,17 +90,21 @@ export const PRODUCTS: ProductMeta[] = [
     groupLabel: 'Money Out',
     description: 'USDC payouts to crypto wallets (EU/US)',
   },
+
+
+  // Spend
   {
     id: 'stablecoin_issuing',
     name: 'Stablecoin Issuing',
-    group: 'money_out',
-    groupLabel: 'Money Out',
+    group: 'spend',
+    groupLabel: 'Spend',
     description: 'Issue cards funded by stablecoin balances',
   },
 ];
 
 export const GROUP_ORDER: Array<{ key: string; label: string }> = [
   { key: 'money_in', label: 'Money In' },
-  { key: 'balances', label: 'Balances' },
+  { key: 'balances', label: 'Balances/Storage' },
   { key: 'money_out', label: 'Money Out' },
+  { key: 'spend', label: 'Spend' },
 ];

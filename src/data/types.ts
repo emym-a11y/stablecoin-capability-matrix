@@ -1,4 +1,4 @@
-export type ProductGroup = 'money_in' | 'balances' | 'money_out';
+export type ProductGroup = 'money_in' | 'balances' | 'money_out' | 'spend';
 
 export type CountryStatus = 'live' | 'coming_soon_2026' | 'year_2027_plus' | 'not_supportable';
 

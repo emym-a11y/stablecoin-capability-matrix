@@ -33,6 +33,25 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.groupLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.groupArrow {
+  font-size: 20px;
+  transition: transform var(--transition-fast);
+  display: inline-block;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.groupArrowOpen {
+  transform: rotate(0deg);
+}
+
 .productRow {
   transition: background var(--transition-fast);
 }
@@ -62,15 +81,16 @@
 }
 
 .arrow {
-  font-size: 14px;
+  font-size: 17px;
   transition: transform var(--transition-fast);
   display: inline-block;
   color: var(--color-text-muted);
   flex-shrink: 0;
+  transform: rotate(-90deg);
 }
 
-.arrowUp {
-  transform: rotate(180deg);
+.arrowOpen {
+  transform: rotate(0deg);
 }
 
 .countCell {
@@ -78,76 +98,70 @@
   width: 90px;
 }
 
-.countNum {
+.countBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
 }
 
 .countLive {
+  background: var(--color-green-bg);
   color: var(--color-green-text);
 }
 
 .countComingSoon {
+  background: var(--color-yellow-bg);
   color: var(--color-yellow-text);
 }
 
 .count2027 {
+  background: var(--color-accent-light);
   color: var(--color-accent);
 }
 
 .countNotSupported {
-  color: var(--color-text-muted);
+  background: var(--color-grey-bg);
+  color: var(--color-grey-text);
 }
 
 .countZero {
+  background: none;
   color: var(--color-text-faint);
 }
 
-/* Expanded detail row */
+/* Expanded detail rows */
 
 .expandedRow td {
   border-bottom: none;
+  background: var(--color-surface-hover);
 }
 
-.detailRow td {
-  padding: 0 var(--space-4) var(--space-4);
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.detailPanel {
+.countryDetailRow {
   background: var(--color-surface-raised);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-md);
-  padding: var(--space-3) var(--space-4);
-  max-height: 400px;
-  overflow-y: auto;
 }
 
-.countryList {
-  display: flex;
-  flex-direction: column;
-}
-
-.countryRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-1) var(--space-2);
+.countryDetailRow td {
+  padding: var(--space-1) var(--space-4);
   border-bottom: 1px solid var(--color-border-light);
 }
 
-.countryRow:last-child {
-  border-bottom: none;
+.countryNameCell {
+  padding-left: calc(var(--space-4) + 22px) !important;
 }
 
 .countryName {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
 }
 
 .countryCode {
   color: var(--color-text-faint);
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   margin-left: var(--space-2);
 }
 

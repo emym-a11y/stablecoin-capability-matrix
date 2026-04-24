@@ -19,9 +19,10 @@ export default function Header({ data }: HeaderProps) {
     (p) => (data.products[p.id]?.live.length ?? 0) > 0
   ).length;
 
-  const allLiveCountries = new Set(
-    Object.values(data.products).flatMap((p) => p.live)
-  );
+  const comingSoonProducts = PRODUCTS.filter(
+    (p) => (data.products[p.id]?.live.length ?? 0) === 0 &&
+           (data.products[p.id]?.coming_soon_2026.length ?? 0) > 0
+  ).length;
 
   return (
     <div className={styles.header}>
@@ -37,8 +38,8 @@ export default function Header({ data }: HeaderProps) {
           <div className={styles.statLabel}>Products live</div>
         </div>
         <div className={styles.stat}>
-          <div className={styles.statValue}>{allLiveCountries.size}</div>
-          <div className={styles.statLabel}>Countries with live products</div>
+          <div className={styles.statValue}>{comingSoonProducts}/{PRODUCTS.length}</div>
+          <div className={styles.statLabel}>Coming soon</div>
         </div>
       </div>
     </div>
