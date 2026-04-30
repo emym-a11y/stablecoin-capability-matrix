@@ -76,20 +76,6 @@ export const PRODUCTS: ProductMeta[] = [
     groupLabel: 'Money Out',
     description: 'Convert USDC to local fiat currency',
   },
-  {
-    id: 'legacy_connect_crypto',
-    name: 'Legacy Connect Crypto Payouts',
-    group: 'money_out',
-    groupLabel: 'Money Out',
-    description: 'Crypto payouts via Connect (US platforms)',
-  },
-  {
-    id: 'distributed_payouts',
-    name: 'Distributed Payouts (Crypto Connect v1)',
-    group: 'money_out',
-    groupLabel: 'Money Out',
-    description: 'USDC payouts to crypto wallets (EU/US)',
-  },
 
 
   // Spend
@@ -100,6 +86,22 @@ export const PRODUCTS: ProductMeta[] = [
     groupLabel: 'Spend',
     description: 'Issue cards funded by stablecoin balances',
   },
+
+  // Connect
+  {
+    id: 'legacy_connect_crypto',
+    name: 'Legacy Connect Crypto Payouts',
+    group: 'connect',
+    groupLabel: 'Connect',
+    description: 'Crypto payouts via Connect (US platforms)',
+  },
+  {
+    id: 'distributed_payouts',
+    name: 'Distributed Payouts (Crypto Connect v1)',
+    group: 'connect',
+    groupLabel: 'Connect',
+    description: 'Platform-initiated USDC payouts to connected accounts (EU/US)',
+  },
 ];
 
 export const GROUP_ORDER: Array<{ key: string; label: string }> = [
@@ -107,4 +109,5 @@ export const GROUP_ORDER: Array<{ key: string; label: string }> = [
   { key: 'balances', label: 'Balances/Storage' },
   { key: 'money_out', label: 'Money Out' },
   { key: 'spend', label: 'Spend' },
+  { key: 'connect', label: 'Connect' },
 ];

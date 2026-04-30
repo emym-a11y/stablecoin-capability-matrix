@@ -1,17 +1,28 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import type { CountryDataFile, CountryStatus } from '../data/types';
 import { getStatusCounts } from '../data/types';
 import { PRODUCTS, GROUP_ORDER } from '../data/products';
 import { getCountryName } from '../utils/countryNames';
+import type { TimelineFilter } from './SearchFilter';
 import styles from './MatrixTable.module.css';
 
 interface MatrixTableProps {
   data: CountryDataFile;
+  selectedCountries: string[];
+  timelineFilter: TimelineFilter;
 }
 
 const STATUS_ORDER: CountryStatus[] = ['live', 'coming_soon_2026', 'year_2027_plus', 'not_supportable'];
 
-export default function MatrixTable({ data }: MatrixTableProps) {
+const TIMELINE_TO_STATUS: Record<TimelineFilter, CountryStatus | null> = {
+  all: null,
+  live: 'live',
+  '2026': 'coming_soon_2026',
+  '2027+': 'year_2027_plus',
+  not_supportable: 'not_supportable',
+};
+
+export default function MatrixTable({ data, selectedCountries, timelineFilter }: MatrixTableProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
@@ -34,6 +45,57 @@ export default function MatrixTable({ data }: MatrixTableProps) {
       }
       return next;
     });
+  };
+
+  // Filter countries for each product based on search + timeline
+  const getFilteredCountries = useMemo(() => {
+    return (productId: string) => {
+      const productData = data.products[productId];
+      if (!productData) return [];
+
+      const allCountries: Array<{ code: string; status: CountryStatus }> = [];
+      for (const status of STATUS_ORDER) {
+        for (const code of productData[status]) {
+          allCountries.push({ code, status });
+        }
+      }
+
+      const statusPriority: Record<CountryStatus, number> = {
+        live: 0, coming_soon_2026: 1, year_2027_plus: 2, not_supportable: 3,
+      };
+
+      return allCountries
+        .filter(({ code, status }) => {
+          if (selectedCountries.length > 0 && !selectedCountries.includes(code)) return false;
+          const targetStatus = TIMELINE_TO_STATUS[timelineFilter];
+          if (targetStatus && status !== targetStatus) return false;
+          return true;
+        })
+        .sort((a, b) => {
+          const sp = statusPriority[a.status] - statusPriority[b.status];
+          if (sp !== 0) return sp;
+          return getCountryName(a.code).localeCompare(getCountryName(b.code));
+        });
+    };
+  }, [data, selectedCountries, timelineFilter]);
+
+  // Compute filtered counts for display
+  const getFilteredCounts = (productId: string) => {
+    const productData = data.products[productId];
+    if (!productData) return { live: 0, coming_soon_2026: 0, year_2027_plus: 0, not_supportable: 0 };
+
+    if (selectedCountries.length === 0) return getStatusCounts(productData);
+
+    // Recount with only selected countries
+    const counts = { live: 0, coming_soon_2026: 0, year_2027_plus: 0, not_supportable: 0 };
+    for (const status of STATUS_ORDER) {
+      for (const code of productData[status]) {
+        if (selectedCountries.includes(code)) {
+          counts[status]++;
+        }
+      }
+    }
+    return counts;
   };
 
   return (
@@ -70,27 +132,10 @@ export default function MatrixTable({ data }: MatrixTableProps) {
               {!isGroupCollapsed && group.products.map((product) => {
                 const productData = data.products[product.id];
                 if (!productData) return null;
-                const counts = getStatusCounts(productData);
+                const counts = getFilteredCounts(product.id);
                 const isExpanded = expandedId === product.id;
                 const hasData = counts.live + counts.coming_soon_2026 + counts.year_2027_plus + counts.not_supportable > 0;
-
-                const allCountries: Array<{ code: string; status: CountryStatus }> = [];
-                for (const status of STATUS_ORDER) {
-                  for (const code of productData[status]) {
-                    allCountries.push({ code, status });
-                  }
-                }
-                const statusPriority: Record<CountryStatus, number> = {
-                  live: 0,
-                  coming_soon_2026: 1,
-                  year_2027_plus: 2,
-                  not_supportable: 3,
-                };
-                allCountries.sort((a, b) => {
-                  const sp = statusPriority[a.status] - statusPriority[b.status];
-                  if (sp !== 0) return sp;
-                  return getCountryName(a.code).localeCompare(getCountryName(b.code));
-                });
+                const filteredCountries = getFilteredCountries(product.id);
 
                 return (
                   <>
@@ -131,7 +176,7 @@ export default function MatrixTable({ data }: MatrixTableProps) {
                         </span>
                       </td>
                     </tr>
-                    {isExpanded && allCountries.map(({ code, status }) => (
+                    {isExpanded && filteredCountries.map(({ code, status }) => (
                       <tr key={`${product.id}-${code}`} className={styles.countryDetailRow}>
                         <td className={styles.countryNameCell}>
                           <span className={styles.countryName}>

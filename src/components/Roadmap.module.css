@@ -1,0 +1,209 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.toggleBar {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: fit-content;
+}
+
+.toggleBtn {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: none;
+  border-right: 1px solid var(--color-border);
+}
+
+.toggleBtn:last-child {
+  border-right: none;
+}
+
+.toggleBtn:hover {
+  background: var(--color-surface-hover);
+}
+
+.toggleBtnActive {
+  background: var(--color-accent);
+  color: white;
+}
+
+.toggleBtnActive:hover {
+  background: var(--color-accent-hover);
+}
+
+/* Section */
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionHeader {
+  background: var(--color-surface-raised);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+}
+
+.sectionHeader:hover {
+  background: var(--color-surface-hover);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sectionArrow {
+  font-size: 20px;
+  transition: transform 120ms ease;
+  display: inline-block;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.sectionArrowOpen {
+  transform: rotate(0deg);
+}
+
+.sectionBody {
+  padding: 0;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+  vertical-align: top;
+}
+
+.table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+.releaseName {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.releaseDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+  line-height: var(--line-height-relaxed);
+}
+
+.colQuarter {
+  width: 80px;
+  text-align: center;
+}
+
+.colPhase {
+  width: 130px;
+  text-align: center;
+}
+
+.colRegion {
+  width: 120px;
+  text-align: center;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.phaseGA {
+  background: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+.phaseGA .badgeDot { background: var(--color-green-dot); }
+
+.phasePublic {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+.phasePublic .badgeDot { background: var(--color-accent); }
+
+.phasePrivate {
+  background: var(--color-yellow-bg);
+  color: var(--color-yellow-text);
+}
+.phasePrivate .badgeDot { background: var(--color-yellow-dot); }
+
+.phaseTBD {
+  background: var(--color-grey-bg);
+  color: var(--color-grey-text);
+}
+.phaseTBD .badgeDot { background: var(--color-grey-dot); }
+
+.quarterBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.regionText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Internal roadmap note */
+.internalNote {
+  background: var(--color-yellow-bg);
+  border: 1px solid var(--color-yellow-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-yellow-text);
+}

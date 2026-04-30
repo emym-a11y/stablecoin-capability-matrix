@@ -73,6 +73,12 @@
       "year_2027_plus": [],
       "not_supportable": []
     },
+    "fiat_issuing": {
+      "live": ["AT","BE","CY","DE","EE","ES","FI","FR","GB","GR","HR","IE","IT","LT","LU","LV","MT","NL","PT","SI","SK","US"],
+      "coming_soon_2026": [],
+      "year_2027_plus": [],
+      "not_supportable": []
+    },
     "stablecoin_issuing": {
       "live": ["AU","BO","HK","HN","MY","PH","PY","SG","SV","UY","AR","BR","CO","CR","DO","EC","GT","MX","PA","PE"],
       "coming_soon_2026": ["BM","KY","VG","BF","BJ","CM","CV","CI","DJ","ET","GA","GH","GM","GN","GQ","KE","KM","LS","MG","MU","MW","RW","SC","SN","SL","TZ","UG","ZM","BD","BN","KH","FJ","KG","MN","PK","LK","TJ","UZ","VN","BH","JO","KW","OM","QA"],

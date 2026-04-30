@@ -1,0 +1,213 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Section card */
+.section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionHeader {
+  background: var(--color-surface-raised);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: var(--color-surface-hover);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sectionArrow {
+  font-size: 20px;
+  transition: transform 120ms ease;
+  display: inline-block;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.sectionArrowOpen {
+  transform: rotate(0deg);
+}
+
+.sectionBody {
+  padding: var(--space-4) var(--space-5);
+}
+
+/* Summary stats */
+.summaryStats {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.summaryStats strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dot {
+  margin: 0 var(--space-2);
+  color: var(--color-text-faint);
+}
+
+/* Table with fixed column widths for alignment */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.colCountry {
+  width: 40%;
+}
+
+.colStatus {
+  width: 20%;
+}
+
+.table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surface);
+}
+
+.table th:not(:first-child) {
+  text-align: center;
+}
+
+.table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.table td:not(:first-child) {
+  text-align: center;
+}
+
+.table tbody tr:hover {
+  background: var(--color-surface-hover);
+}
+
+.countryCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.flag {
+  font-size: var(--font-size-md);
+}
+
+.countryLabel {
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash {
+  color: var(--color-text-faint);
+}
+
+.colGroup {
+  font-size: 10px;
+  color: var(--color-text-faint);
+  font-weight: var(--font-weight-normal);
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  margin-top: 2px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.badgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badgeLiveNow {
+  background: var(--color-green-bg);
+  color: var(--color-green-text);
+}
+
+.badgeLiveNow .badgeDot {
+  background: var(--color-green-dot);
+}
+
+.badgeRoadmap {
+  background: var(--color-yellow-bg);
+  color: var(--color-yellow-text);
+}
+
+.badgeRoadmap .badgeDot {
+  background: var(--color-yellow-dot);
+}
+
+.badgeNotSupported {
+  background: var(--color-grey-bg);
+  color: var(--color-grey-text);
+}
+
+.badgeNotSupported .badgeDot {
+  background: var(--color-grey-dot);
+}
